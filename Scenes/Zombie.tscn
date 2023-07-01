@@ -63,7 +63,12 @@ tracks/0/keys = {
 }
 
 [node name="Zombie" type="KinematicBody2D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 69
 script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
@@ -84,4 +89,3 @@ playback_speed = 2.0
 
 [connection signal="body_entered" from="Detection" to="." method="_on_Detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_Detection_body_exited"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

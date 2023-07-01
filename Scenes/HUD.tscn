@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://undertale_battle_font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/HUD/healthbar.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/HUD/bar.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/HUD/satiety.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/HUD/satietybar.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/HUD/health.png" type="Texture" id=6]
+[ext_resource path="res://Codes/HUD.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 10.0
+margin_right = -5.0
+margin_bottom = -10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1014.0
+margin_bottom = 580.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1014.0
+margin_bottom = 18.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 18.0
+texture = ExtResource( 6 )
+
+[node name="HPbar" type="TextureProgress" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 18.0
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+
+[node name="HPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 88.0
+margin_right = 88.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 1014.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 16.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="Satietybar" type="TextureProgress" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 18.0
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+
+[node name="SatietyLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 88.0
+margin_right = 88.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
